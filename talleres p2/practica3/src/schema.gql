@@ -1,0 +1,90 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Estudiante {
+  id: ID!
+  identificacion: String!
+  nombre: String!
+  direccion: String!
+  telefono: [String!]
+  tipo: Int!
+  estado: Boolean!
+}
+
+type Activo {
+  id: ID!
+  activoti: String!
+  estado: Boolean!
+}
+
+type Paciente {
+  id: ID!
+  identificacion: String!
+  nombre: String!
+  estado: Boolean!
+}
+
+type Query {
+  estudiantes: [Estudiante!]!
+  estudiante(id: ID!): Estudiante!
+  activos: [Activo!]!
+  activo(id: ID!): Activo!
+  pacientes: [Paciente!]!
+  paciente(id: ID!): Paciente!
+}
+
+type Mutation {
+  createEstudiante(createEstudianteInput: CreateEstudianteInput!): Estudiante!
+  updateEstudiante(updateEstudianteInput: UpdateEstudianteInput!): Estudiante!
+  removeEstudiante(id: ID!): Estudiante!
+  createActivo(createActivoInput: CreateActivoInput!): Activo!
+  updateActivo(updateActivoInput: UpdateActivoInput!): Activo!
+  removeActivo(id: ID!): Activo!
+  createPaciente(createPacienteInput: CreatePacienteInput!): Paciente!
+  updatePaciente(updatePacienteInput: UpdatePacienteInput!): Paciente!
+  removePaciente(id: ID!): Paciente!
+}
+
+input CreateEstudianteInput {
+  identificacion: String!
+  nombre: String!
+  direccion: String!
+  telefono: [String!]
+  tipo: Int!
+  estado: Boolean!
+}
+
+input UpdateEstudianteInput {
+  identificacion: String
+  nombre: String
+  direccion: String
+  telefono: [String!]
+  tipo: Int
+  estado: Boolean
+  id: ID!
+}
+
+input CreateActivoInput {
+  activoti: String!
+  estado: Boolean!
+}
+
+input UpdateActivoInput {
+  activoti: String
+  estado: Boolean
+  id: ID!
+}
+
+input CreatePacienteInput {
+  identificacion: String!
+  nombre: String!
+  estado: Boolean!
+}
+
+input UpdatePacienteInput {
+  identificacion: String
+  nombre: String
+  estado: Boolean
+  id: ID!
+}
